@@ -1,13 +1,10 @@
---- 
-services: 
-  backend: 
-    depends_on: "-mongo"
-    image: vin229n/boltbackend
-    network_mode: host
-  mongo: 
+version: "3.7"
+services:
+  mongo:
     image: vin229n/boltmongo
-    network_mode: host
-  ui: 
+  backend:
+    image: vin229n/boltbackend
+    depends_on:
+      - mongo
+  ui:
     image: vin229n/boltui
-    network_mode: host
-version: "3"
