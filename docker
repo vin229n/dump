@@ -4,11 +4,9 @@ RUN mkdir /dump/
 
 COPY ./dump /dump/
 
-EXPOSE 27017
-CMD mongo
-CMD mongorestore --db MOVE --verbose /dump
-CMD use admin
-CMD db.createUser({user:"bolt",pwd:"bolt",roles:[]})
+CMD "mongod"
+
+
 
 
 
