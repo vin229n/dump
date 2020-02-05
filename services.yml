@@ -1,0 +1,8 @@
+version: '3'
+services:
+	backend:
+		image: 'vin229n/boltbackend'
+	ui:
+		image: 'vin229n/boltui'
+		ports:
+            -"80:80"
